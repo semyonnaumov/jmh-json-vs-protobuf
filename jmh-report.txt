@@ -1,0 +1,73 @@
+# JMH version: 1.26
+# VM version: JDK 11.0.2, OpenJDK 64-Bit Server VM, 11.0.2+9
+# VM invoker: /Library/Java/JavaVirtualMachines/openjdk-11.0.2.jdk/Contents/Home/bin/java
+# VM options: <none>
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.naumov.DeserializationBenchmark.deserializeJson
+
+# Run progress: 0,00% complete, ETA 00:03:20
+# Fork: 1 of 1
+# Warmup Iteration   1: 1388298,974 ops/s
+# Warmup Iteration   2: 1358929,648 ops/s
+# Warmup Iteration   3: 1381149,317 ops/s
+# Warmup Iteration   4: 1379670,853 ops/s
+# Warmup Iteration   5: 1354114,059 ops/s
+Iteration   1: 1370865,744 ops/s
+Iteration   2: 1310598,290 ops/s
+Iteration   3: 1266062,906 ops/s
+Iteration   4: 1326047,987 ops/s
+Iteration   5: 1367694,589 ops/s
+
+
+Result "com.naumov.DeserializationBenchmark.deserializeJson":
+  1328253,903 ±(99.9%) 167355,157 ops/s [Average]
+  (min, avg, max) = (1266062,906, 1328253,903, 1370865,744), stdev = 43461,603
+  CI (99.9%): [1160898,747, 1495609,060] (assumes normal distribution)
+
+
+# JMH version: 1.26
+# VM version: JDK 11.0.2, OpenJDK 64-Bit Server VM, 11.0.2+9
+# VM invoker: /Library/Java/JavaVirtualMachines/openjdk-11.0.2.jdk/Contents/Home/bin/java
+# VM options: <none>
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.naumov.DeserializationBenchmark.deserializeProtobuf
+
+# Run progress: 50,00% complete, ETA 00:01:40
+# Fork: 1 of 1
+# Warmup Iteration   1: 6250820,726 ops/s
+# Warmup Iteration   2: 6306043,745 ops/s
+# Warmup Iteration   3: 5917018,258 ops/s
+# Warmup Iteration   4: 6356824,686 ops/s
+# Warmup Iteration   5: 6431037,868 ops/s
+Iteration   1: 6055430,994 ops/s
+Iteration   2: 5127044,941 ops/s
+Iteration   3: 5122568,526 ops/s
+Iteration   4: 5395955,624 ops/s
+Iteration   5: 5169689,087 ops/s
+
+
+Result "com.naumov.DeserializationBenchmark.deserializeProtobuf":
+  5374137,835 ±(99.9%) 1529119,855 ops/s [Average]
+  (min, avg, max) = (5122568,526, 5374137,835, 6055430,994), stdev = 397107,571
+  CI (99.9%): [3845017,979, 6903257,690] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:03:21
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+Benchmark                                      Mode  Cnt        Score         Error  Units
+DeserializationBenchmark.deserializeJson      thrpt    5  1328253,903 ±  167355,157  ops/s
+DeserializationBenchmark.deserializeProtobuf  thrpt    5  5374137,835 ± 1529119,855  ops/s
